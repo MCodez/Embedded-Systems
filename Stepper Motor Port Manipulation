@@ -1,1 +1,0 @@
-This file contains all the necessary notes to drive a stepper motor using arduino PORT MANIPULATION. Data is send bitwise. You can get to know the 4-bit mode and 8-bit mode motor run through this file.
