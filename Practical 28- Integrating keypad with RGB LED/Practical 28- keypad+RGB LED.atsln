@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Practical 28- keypad+RGB LED", "Practical 28- keypad+RGB LED\Practical 28- keypad+RGB LED.cproj", "{75EB9E50-2B2A-4E3B-BA02-FD7336577D5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75EB9E50-2B2A-4E3B-BA02-FD7336577D5B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{75EB9E50-2B2A-4E3B-BA02-FD7336577D5B}.Debug|AVR.Build.0 = Debug|AVR
+		{75EB9E50-2B2A-4E3B-BA02-FD7336577D5B}.Release|AVR.ActiveCfg = Release|AVR
+		{75EB9E50-2B2A-4E3B-BA02-FD7336577D5B}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
