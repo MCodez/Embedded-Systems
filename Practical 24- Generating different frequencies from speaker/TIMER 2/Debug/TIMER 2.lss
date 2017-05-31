@@ -1,0 +1,229 @@
+
+TIMER 2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000130  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00000130  000001a4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .stab         000006cc  00000000  00000000  000001a4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000097  00000000  00000000  00000870  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .comment      0000002f  00000000  00000000  00000907  2**0
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000028  00000000  00000000  00000936  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000030d  00000000  00000000  0000095e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000000f3  00000000  00000000  00000c6b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000021a  00000000  00000000  00000d5e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000034  00000000  00000000  00000f78  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000118  00000000  00000000  00000fac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000018  00000000  00000000  000010c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 3b 00 	call	0x76	; 0x76 <main>
+  64:	0c 94 96 00 	jmp	0x12c	; 0x12c <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <timer0_CTC>:
+#include <util/delay.h>
+
+
+void timer0_CTC()
+{
+	TCCR0|=(1<<WGM01)|(1<<COM00)|(1<<CS01);
+  6c:	83 b7       	in	r24, 0x33	; 51
+  6e:	8a 61       	ori	r24, 0x1A	; 26
+  70:	83 bf       	out	0x33, r24	; 51
+	DDRB|=(1<<PB3);
+  72:	bb 9a       	sbi	0x17, 3	; 23
+  74:	08 95       	ret
+
+00000076 <main>:
+}
+
+int main(void)
+{
+
+	timer0_CTC();
+  76:	0e 94 36 00 	call	0x6c	; 0x6c <timer0_CTC>
+	while(1)
+	{
+		
+			 OCR0=59*3;
+  7a:	71 eb       	ldi	r23, 0xB1	; 177
+			 _delay_ms(1000);
+			 OCR0=52*3;
+  7c:	6c e9       	ldi	r22, 0x9C	; 156
+			 _delay_ms(1000);
+			 OCR0=46*3;
+  7e:	5a e8       	ldi	r21, 0x8A	; 138
+			 _delay_ms(1000);
+			 OCR0=44*3;
+  80:	44 e8       	ldi	r20, 0x84	; 132
+			 _delay_ms(1000);
+			 OCR0=38*3;
+  82:	32 e7       	ldi	r19, 0x72	; 114
+			 _delay_ms(1000);
+			 OCR0=34*5;
+  84:	2a ea       	ldi	r18, 0xAA	; 170
+			 _delay_ms(1000);
+			 OCR0=30*7;
+  86:	92 ed       	ldi	r25, 0xD2	; 210
+			 _delay_ms(1000);
+			 OCR0=28*7;
+  88:	84 ec       	ldi	r24, 0xC4	; 196
+
+	timer0_CTC();
+	while(1)
+	{
+		
+			 OCR0=59*3;
+  8a:	7c bf       	out	0x3c, r23	; 60
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  8c:	af ef       	ldi	r26, 0xFF	; 255
+  8e:	e3 ed       	ldi	r30, 0xD3	; 211
+  90:	f0 e3       	ldi	r31, 0x30	; 48
+  92:	a1 50       	subi	r26, 0x01	; 1
+  94:	e0 40       	sbci	r30, 0x00	; 0
+  96:	f0 40       	sbci	r31, 0x00	; 0
+  98:	e1 f7       	brne	.-8      	; 0x92 <main+0x1c>
+  9a:	00 c0       	rjmp	.+0      	; 0x9c <main+0x26>
+  9c:	00 00       	nop
+			 _delay_ms(1000);
+			 OCR0=52*3;
+  9e:	6c bf       	out	0x3c, r22	; 60
+  a0:	af ef       	ldi	r26, 0xFF	; 255
+  a2:	e3 ed       	ldi	r30, 0xD3	; 211
+  a4:	f0 e3       	ldi	r31, 0x30	; 48
+  a6:	a1 50       	subi	r26, 0x01	; 1
+  a8:	e0 40       	sbci	r30, 0x00	; 0
+  aa:	f0 40       	sbci	r31, 0x00	; 0
+  ac:	e1 f7       	brne	.-8      	; 0xa6 <main+0x30>
+  ae:	00 c0       	rjmp	.+0      	; 0xb0 <main+0x3a>
+  b0:	00 00       	nop
+			 _delay_ms(1000);
+			 OCR0=46*3;
+  b2:	5c bf       	out	0x3c, r21	; 60
+  b4:	af ef       	ldi	r26, 0xFF	; 255
+  b6:	e3 ed       	ldi	r30, 0xD3	; 211
+  b8:	f0 e3       	ldi	r31, 0x30	; 48
+  ba:	a1 50       	subi	r26, 0x01	; 1
+  bc:	e0 40       	sbci	r30, 0x00	; 0
+  be:	f0 40       	sbci	r31, 0x00	; 0
+  c0:	e1 f7       	brne	.-8      	; 0xba <main+0x44>
+  c2:	00 c0       	rjmp	.+0      	; 0xc4 <main+0x4e>
+  c4:	00 00       	nop
+			 _delay_ms(1000);
+			 OCR0=44*3;
+  c6:	4c bf       	out	0x3c, r20	; 60
+  c8:	af ef       	ldi	r26, 0xFF	; 255
+  ca:	e3 ed       	ldi	r30, 0xD3	; 211
+  cc:	f0 e3       	ldi	r31, 0x30	; 48
+  ce:	a1 50       	subi	r26, 0x01	; 1
+  d0:	e0 40       	sbci	r30, 0x00	; 0
+  d2:	f0 40       	sbci	r31, 0x00	; 0
+  d4:	e1 f7       	brne	.-8      	; 0xce <main+0x58>
+  d6:	00 c0       	rjmp	.+0      	; 0xd8 <main+0x62>
+  d8:	00 00       	nop
+			 _delay_ms(1000);
+			 OCR0=38*3;
+  da:	3c bf       	out	0x3c, r19	; 60
+  dc:	af ef       	ldi	r26, 0xFF	; 255
+  de:	e3 ed       	ldi	r30, 0xD3	; 211
+  e0:	f0 e3       	ldi	r31, 0x30	; 48
+  e2:	a1 50       	subi	r26, 0x01	; 1
+  e4:	e0 40       	sbci	r30, 0x00	; 0
+  e6:	f0 40       	sbci	r31, 0x00	; 0
+  e8:	e1 f7       	brne	.-8      	; 0xe2 <main+0x6c>
+  ea:	00 c0       	rjmp	.+0      	; 0xec <main+0x76>
+  ec:	00 00       	nop
+			 _delay_ms(1000);
+			 OCR0=34*5;
+  ee:	2c bf       	out	0x3c, r18	; 60
+  f0:	af ef       	ldi	r26, 0xFF	; 255
+  f2:	e3 ed       	ldi	r30, 0xD3	; 211
+  f4:	f0 e3       	ldi	r31, 0x30	; 48
+  f6:	a1 50       	subi	r26, 0x01	; 1
+  f8:	e0 40       	sbci	r30, 0x00	; 0
+  fa:	f0 40       	sbci	r31, 0x00	; 0
+  fc:	e1 f7       	brne	.-8      	; 0xf6 <main+0x80>
+  fe:	00 c0       	rjmp	.+0      	; 0x100 <main+0x8a>
+ 100:	00 00       	nop
+			 _delay_ms(1000);
+			 OCR0=30*7;
+ 102:	9c bf       	out	0x3c, r25	; 60
+ 104:	af ef       	ldi	r26, 0xFF	; 255
+ 106:	e3 ed       	ldi	r30, 0xD3	; 211
+ 108:	f0 e3       	ldi	r31, 0x30	; 48
+ 10a:	a1 50       	subi	r26, 0x01	; 1
+ 10c:	e0 40       	sbci	r30, 0x00	; 0
+ 10e:	f0 40       	sbci	r31, 0x00	; 0
+ 110:	e1 f7       	brne	.-8      	; 0x10a <main+0x94>
+ 112:	00 c0       	rjmp	.+0      	; 0x114 <main+0x9e>
+ 114:	00 00       	nop
+			 _delay_ms(1000);
+			 OCR0=28*7;
+ 116:	8c bf       	out	0x3c, r24	; 60
+ 118:	af ef       	ldi	r26, 0xFF	; 255
+ 11a:	e3 ed       	ldi	r30, 0xD3	; 211
+ 11c:	f0 e3       	ldi	r31, 0x30	; 48
+ 11e:	a1 50       	subi	r26, 0x01	; 1
+ 120:	e0 40       	sbci	r30, 0x00	; 0
+ 122:	f0 40       	sbci	r31, 0x00	; 0
+ 124:	e1 f7       	brne	.-8      	; 0x11e <main+0xa8>
+ 126:	00 c0       	rjmp	.+0      	; 0x128 <main+0xb2>
+ 128:	00 00       	nop
+ 12a:	af cf       	rjmp	.-162    	; 0x8a <main+0x14>
+
+0000012c <_exit>:
+ 12c:	f8 94       	cli
+
+0000012e <__stop_program>:
+ 12e:	ff cf       	rjmp	.-2      	; 0x12e <__stop_program>

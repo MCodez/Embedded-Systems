@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Practical 20- ON or OFF LED", "Practical 20- ON or OFF LED\Practical 20- ON or OFF LED.cproj", "{11D8E228-5C40-4F06-9409-A8E8BF325323}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11D8E228-5C40-4F06-9409-A8E8BF325323}.Debug|AVR.ActiveCfg = Debug|AVR
+		{11D8E228-5C40-4F06-9409-A8E8BF325323}.Debug|AVR.Build.0 = Debug|AVR
+		{11D8E228-5C40-4F06-9409-A8E8BF325323}.Release|AVR.ActiveCfg = Release|AVR
+		{11D8E228-5C40-4F06-9409-A8E8BF325323}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
