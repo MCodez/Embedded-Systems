@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "LCD 8", "LCD 8\LCD 8.cproj", "{1A42D49B-13D4-4F53-9327-44850563D47A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A42D49B-13D4-4F53-9327-44850563D47A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{1A42D49B-13D4-4F53-9327-44850563D47A}.Debug|AVR.Build.0 = Debug|AVR
+		{1A42D49B-13D4-4F53-9327-44850563D47A}.Release|AVR.ActiveCfg = Release|AVR
+		{1A42D49B-13D4-4F53-9327-44850563D47A}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

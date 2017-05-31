@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "wall", "wall\wall.cproj", "{CDD96C13-B843-4A97-86D8-AB142A32C090}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDD96C13-B843-4A97-86D8-AB142A32C090}.Debug|AVR.ActiveCfg = Debug|AVR
+		{CDD96C13-B843-4A97-86D8-AB142A32C090}.Debug|AVR.Build.0 = Debug|AVR
+		{CDD96C13-B843-4A97-86D8-AB142A32C090}.Release|AVR.ActiveCfg = Release|AVR
+		{CDD96C13-B843-4A97-86D8-AB142A32C090}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
