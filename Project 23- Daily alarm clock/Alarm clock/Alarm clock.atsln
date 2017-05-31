@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Alarm clock", "Alarm clock\Alarm clock.cproj", "{EBF86A7D-6A3D-4A98-B8DE-B300708A75FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBF86A7D-6A3D-4A98-B8DE-B300708A75FB}.Debug|AVR.ActiveCfg = Debug|AVR
+		{EBF86A7D-6A3D-4A98-B8DE-B300708A75FB}.Debug|AVR.Build.0 = Debug|AVR
+		{EBF86A7D-6A3D-4A98-B8DE-B300708A75FB}.Release|AVR.ActiveCfg = Release|AVR
+		{EBF86A7D-6A3D-4A98-B8DE-B300708A75FB}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
