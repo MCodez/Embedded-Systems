@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "MOTOR 3", "MOTOR 3\MOTOR 3.cproj", "{2EEC1510-E1AB-41E7-BCB8-22B426F40A9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EEC1510-E1AB-41E7-BCB8-22B426F40A9B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{2EEC1510-E1AB-41E7-BCB8-22B426F40A9B}.Debug|AVR.Build.0 = Debug|AVR
+		{2EEC1510-E1AB-41E7-BCB8-22B426F40A9B}.Release|AVR.ActiveCfg = Release|AVR
+		{2EEC1510-E1AB-41E7-BCB8-22B426F40A9B}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
